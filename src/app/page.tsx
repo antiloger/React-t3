@@ -2,6 +2,8 @@ import Link from "next/link";
 
 import { db } from "../server/db/index"
 
+export const dynamic = "force-dynamic"
+
 export default async function HomePage() {
 
   const contacts = await db.query.posts.findMany()
