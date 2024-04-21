@@ -19,12 +19,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className={`font-sans ${inter.variable}`}>
-        <div>
-          Navbar
-        </div>
-        {children}</body>
-    </html>
+    <div className={`font-sans ${inter.variable}`}>
+      <div>
+        sidebar layout
+      </div>
+      {children}
+    </div>
   );
 }
