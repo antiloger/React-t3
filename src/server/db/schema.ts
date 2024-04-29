@@ -18,11 +18,15 @@ import {
  */
 export const createTable = pgTableCreator((name) => `ant-postgres_${name}`);
 
-export const posts = createTable(
-  "post",
+export const users = createTable(
+  "users",
   {
     id: serial("id").primaryKey(),
     name: varchar("name", { length: 256 }),
+    role: varchar("role", { length: 256 }),
+    email: varchar("email", { length: 256 }),
+    imageUrl: varchar("image_url", { length: 1024 }),
+    password: varchar("password", { length: 256 }),
     createdAt: timestamp("created_at")
       .default(sql`CURRENT_TIMESTAMP`)
       .notNull(),
